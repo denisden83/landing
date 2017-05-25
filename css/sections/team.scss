@@ -1,0 +1,114 @@
+.team {
+	background: #454545 url('../img/bg/team.jpg') 50% no-repeat;
+	background-size: auto 100%;
+	position: relative;
+	color: white;
+}
+
+.team__section {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	width: 50%;
+	background: rgba(#2F3133, .93%);
+	// padding: 0 95px 0 75px;
+   padding: 5% 2% 0% 7%;
+}
+
+.team-acco__item {
+	margin-bottom: 40px;
+
+	&--active {
+
+		.team-acco__content {
+			display: block;
+		}
+
+		.team-acco__trigger {
+			color: $yellow;
+
+			&::before {
+				transform: rotate(-180deg);
+			}
+		}
+	}
+}
+
+
+.team-acco__trigger {
+	color: $white;
+	font-size: 14px;
+	font-family: 'Gagalin-Regular';
+	text-decoration: none;
+	position: relative;
+	display: block;
+
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		left: -19px;
+		top: 8px;
+		width: 0;
+		height: 0;
+		border-top: 7px solid $yellow;
+		border-left: 5px solid transparent;
+		border-right: 5px solid transparent;
+		border-bottom: 0 solid transparent;
+		transform: rotate(0deg);
+		transition: .3s;
+	}
+}
+
+
+
+.team-acco__content {
+	@extend %clearfix;
+	padding-top: 14px;
+	display: none;
+}
+
+
+.team-acco__pic {
+	float: left;
+	text-align: center;
+	width: 30%;
+}
+
+.team-acco__pic-img {
+	display: inline-block;
+	vertical-align: top;
+	width: 100px;
+	height: 100px;
+	background-image: url('../img/content/teammate.jpg');
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	border-radius: 50%;
+
+}
+
+.team-acco__text {
+	float: left;
+	width: 70%;
+}
+
+.team-acco__text-title {
+	font-family: 'Ubuntu-Bold';
+	font-size: 14px;
+	color: $white;
+	margin-bottom: 14px;
+
+}
+
+.team-acco__text-content {
+	font-family: 'Ubuntu-Light';
+	font-size: 14px;
+	color: $white;
+}
+
+.team__title {
+	color: $yellow;
+	margin-bottom: 12%;
+}

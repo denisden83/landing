@@ -1,0 +1,83 @@
+.menu {
+	background: url('../img/bg/menu.jpg') 50% no-repeat;
+	background-size: cover;
+	position: relative;
+}
+
+.menu__title {
+	color: $white;
+	position: absolute;
+	top: 10%;
+	left: 10%;
+}
+
+.menu-acco {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	@extend %clearfix;
+}
+
+.menu-acco__item {
+	float: left;
+	height: 100%;
+	@extend %clearfix;
+
+	&--active {
+
+		.menu-acco__trigger-text {
+			color: $yellow;
+		}
+
+		.menu-acco__content {
+			width: 550px;
+		}
+	}
+}
+
+.menu-acco__trigger {
+	float: left;
+	position: relative;
+	height: 100%;
+	display: block;
+	width: 80px;
+
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.menu-acco__trigger-text {
+	color: $white;
+	font-family: 'Gagalin-Regular';
+	font-size: 40px;
+	position: absolute;
+	top: 50%;
+	height: 80px;
+	margin-top: -40px;
+	white-space: nowrap;
+	width: 650px;
+	left: 50%;
+	margin-left: -312px;
+	transform: rotate(-90deg);
+	text-align: center;
+}
+
+.menu-acco__content {
+	background: rgba(47, 50, 52, 0.93);
+	width: 0;
+	float: left;
+	height: 100%;
+	color: $white;
+	overflow: hidden;
+}
+
+.menu-acco__content-text {
+	font-family: 'Ubuntu-Light';
+	font-size: 14px;
+	color: $white;
+	width: 550px;
+	padding: 60px 30px;
+	line-height: 1.8;
+}

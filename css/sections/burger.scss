@@ -1,0 +1,240 @@
+.burger {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f9b33b+0,ea8c38+33,ea8c38+66,f9b33b+100 */
+background: #f9b33b; /* Old browsers */
+background: -moz-linear-gradient(top, #f9b33b 0%, #ea8c38 33%, #ea8c38 66%, #f9b33b 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #f9b33b 0%,#ea8c38 33%,#ea8c38 66%,#f9b33b 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #f9b33b 0%,#ea8c38 33%,#ea8c38 66%,#f9b33b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9b33b', endColorstr='#f9b33b',GradientType=0 ); /* IE6-9 */
+}
+
+// slider
+.burger-slider-wrapper {
+	position: relative;
+}
+
+// controls
+
+.burger-slider__btn {
+	position: absolute;
+	top: 50%;
+	z-index: 10;
+
+	&:hover {
+		.burger-slider__arrow {
+			width: 40px;
+
+		}
+	}
+}
+
+.burger-slider__btn--next {
+	transform: rotate(-90deg);
+	right: -45px;
+}
+
+.burger-slider__btn--prev {
+	transform: rotate(90deg);
+	left: -45px;
+}
+
+.burger-slider__arrow {
+	color: $white;
+	display: block;
+	height: 30px;
+	width: 35px;
+	transition: .3s;
+}
+
+// item
+.butger-slider__item {
+	position: relative;
+	padding-bottom: 85px;
+	@extend %clearfix;
+}
+
+// ingredients
+.burger-ingredients {
+	display: block;
+	position: absolute;
+	top: 20px;
+	left: 0;
+	background: rgba(227,80,40,.4);
+	width: 90px;
+	height: 90px;
+	border-radius: 5px;
+	z-index: 10;
+	transition: .5s;
+
+	&:hover {
+		background: #E34F27;
+
+		.burger-ingredients__dropdown {
+			left: 100%;
+			opacity: 1;
+		}
+	}
+}
+
+.burger-ingredients__icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.burger-ingredients__icon-pic-wrap{
+	margin: 0px 0px 0px 0px;
+}
+
+.burger-ingredients__icon-pic {
+	width: 46px;
+	height: 45px;
+	display: block;
+}
+
+.burger-ingredients__icon-text {
+	color: $white;
+	font-size: 14px;
+	font-family: 'Gagalin-Regular';
+}
+
+// dropdown
+.burger-ingredients__dropdown {
+	width: 270px;
+	position: absolute;
+	background: rgba($white, .9);
+	border-radius: 7px;
+	padding: 20px;
+	left: -999px;
+	opacity: 0;
+	
+	transition: opacity .5s;
+	z-index: 10;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: -29px;
+		width: 30px;
+	}
+}
+
+.burger-ingredients__table {
+	width: 100%;
+}
+
+.burger-ingredients__table-cell {
+	vertical-align: middle;
+	padding: 8px 0;
+}
+
+.burger-ingredients__table-cell-icon {
+	max-width: 45px;
+	max-height: 50px;
+	display: inline-block;
+}
+
+.burger-ingredients__table-cell-text {
+	font-family: 'Ubuntu-Bold';
+
+}
+.burger-ingredients__table-cell-text2 {
+	font-family: 'Ubuntu-Medium';
+	// font-family: 'Ubuntu-Regular';
+}
+
+
+// weight
+.burger-weight {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	opacity: .5;
+}
+
+.burger-weight__measure {
+	background: url('../img/icons/kkal.svg') 50% no-repeat;
+	width: 65px;
+	height: 60px;
+	position: relative;
+	text-align: center;
+}
+
+.burger-weight__amount {
+	position: absolute;
+	bottom: 8px;
+	left: 0;
+	right: 0;
+	color: $white;
+	font-size: 20px;
+	font-family: 'Gagalin-Regular';
+}
+
+.burger-weight__title {
+	text-align: center;
+	font-size: 14px;
+	color: $white;
+	font-family: 'Gagalin-Regular';
+}
+
+// left
+.burger-slider__left {
+	float: left;
+	width: 50%;
+	padding-top: 95px;
+}
+
+.burger-slider__pic {
+	display: inline-block;
+	max-width: 100%;
+}
+
+// right
+.burger-slider__right {
+	float: left;
+	width: 50%;
+}
+
+.burger__title {
+	color: $white;
+	line-height: 1.1em;
+	margin-bottom: 15px;
+}
+
+.burger-slider__text {
+	color: $white;
+	margin-bottom: 18px;
+	height: 175px;
+	overflow: auto;
+}
+
+.burger-slider__options-price {
+	display: inline-block;
+	vertical-align: middle;
+	color: #E35028;
+	font-family: 'Gagalin-Regular';
+}
+
+.burger-slider__options-price-amount,
+.burger-slider__options-price-currency {
+	display: inline-block;
+	vertical-align: bottom;
+	line-height: 1em;
+}
+
+.burger-slider__options-price-amount {
+	font-size: 72px;	
+}
+
+.burger-slider__options-price-currency {
+	font-size: 30px;
+}
+
+.burger__order-link {
+	display: inline-block;
+	vertical-align: bottom;
+	margin-left: 32px;
+}
+

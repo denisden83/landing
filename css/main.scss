@@ -1,0 +1,27 @@
+//colors
+$orange: #e45028;
+$yellow: #f9b43b;
+$black: #2f3234;
+$red: #e35028;
+$white: #fff;
+
+//mixins
+@import "helpers/mixins";
+
+//layout setups
+@import "layout/normalize";
+@import "layout/adjustment";
+@import "layout/fonts";
+
+//sections
+@import "sections/common";
+@import "sections/fixedmenu";
+@import "sections/hero";
+@import "sections/best";
+@import "sections/burger";
+@import "sections/team";
+@import "sections/menu";
+@import "sections/review";
+@import "sections/order";
+@import "sections/map";
+
