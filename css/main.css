@@ -1219,19 +1219,18 @@ footer {
 .burger-slider__text {
   color: #fff;
   margin-bottom: 18px;
-  height: 175px;
+  max-height: 175px;
   overflow: auto; }
 
 .burger-slider__options-price {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: bottom;
   color: #E35028;
   font-family: 'Gagalin-Regular'; }
 
 .burger-slider__options-price-amount,
 .burger-slider__options-price-currency {
   display: inline-block;
-  vertical-align: bottom;
   line-height: 1em; }
 
 .burger-slider__options-price-amount {
@@ -1301,7 +1300,7 @@ footer {
 
 .team-acco__pic {
   float: left;
-  text-align: center;
+  text-align: left;
   width: 30%; }
 
 .team-acco__pic-img {

@@ -206,13 +206,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9b33b', end
 .burger-slider__text {
 	color: $white;
 	margin-bottom: 18px;
-	height: 175px;
+	max-height: 175px;
 	overflow: auto;
 }
 
 .burger-slider__options-price {
 	display: inline-block;
-	vertical-align: middle;
+	vertical-align: bottom;
 	color: #E35028;
 	font-family: 'Gagalin-Regular';
 }
@@ -220,7 +220,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9b33b', end
 .burger-slider__options-price-amount,
 .burger-slider__options-price-currency {
 	display: inline-block;
-	vertical-align: bottom;
+	
 	line-height: 1em;
 }
 
