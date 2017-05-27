@@ -73,7 +73,7 @@
 .team-acco__pic {
 	float: left;
 	text-align: left;
-	width: 30%;
+	width: 20%;
 }
 
 .team-acco__pic-img {
@@ -91,7 +91,9 @@
 
 .team-acco__text {
 	float: left;
-	width: 70%;
+	width: 80%;
+	max-height: 250px;
+	overflow: auto;
 }
 
 .team-acco__text-title {

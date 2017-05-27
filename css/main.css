@@ -737,6 +737,8 @@ body {
   margin: 0 auto;
   width: 940px;
   position: relative; }
+  .container--header {
+    position: static; }
 
 .container-section {
   margin: 0 auto;
@@ -831,7 +833,8 @@ footer {
 .fixed-menu {
   position: fixed;
   top: 90px;
-  right: 40px; }
+  right: 40px;
+  z-index: 2; }
 
 .fixed-menu__item {
   margin-bottom: 5px; }
@@ -875,13 +878,47 @@ footer {
     background: #0EFF00; }
 
 .hero {
-  background: url("../img/bg/hero-bg.jpg") center center no-repeat;
-  background-size: cover;
-  position: relative; }
-  .hero .container {
-    position: static; }
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 1;
+  background: black url("../img/bg/hero-bg.jpg") no-repeat;
+  background-size: cover; }
+  .hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    background: black;
+    -webkit-animation: rgba 2s 1s forwards;
+    animation: rgba 2s 1s forwards; }
+  @supports (object-fit: cover) {
+    .hero video {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; } }
   .hero .container-section {
     position: absolute; }
+
+@-webkit-keyframes rgba {
+  from {
+    background: black; }
+  to {
+    background: transparent; } }
+
+@keyframes rgba {
+  from {
+    background: black; }
+  to {
+    background: transparent; } }
 
 .header {
   padding-top: 12px; }
@@ -1301,7 +1338,7 @@ footer {
 .team-acco__pic {
   float: left;
   text-align: left;
-  width: 30%; }
+  width: 20%; }
 
 .team-acco__pic-img {
   display: inline-block;
@@ -1316,7 +1353,9 @@ footer {
 
 .team-acco__text {
   float: left;
-  width: 70%; }
+  width: 80%;
+  max-height: 250px;
+  overflow: auto; }
 
 .team-acco__text-title {
   font-family: 'Ubuntu-Bold';

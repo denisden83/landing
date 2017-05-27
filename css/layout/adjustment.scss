@@ -24,11 +24,17 @@ body {
 	min-height: 650px;
 }
 
+
+
 .container {
 	@extend %clearfix;
 	margin: 0 auto;
 	width: $container-width;
 	position: relative;
+
+	&--header {
+		position: static;
+	}
 }
 
 .container-section {
