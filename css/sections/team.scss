@@ -19,10 +19,10 @@
 .team-acco__item {
 	margin-bottom: 40px;
 
-	&--active {
+	&.active {
 
 		.team-acco__content {
-			display: block;
+			// display: block;
 		}
 
 		.team-acco__trigger {
@@ -74,6 +74,7 @@
 	float: left;
 	text-align: left;
 	width: 20%;
+	min-width: 100px;
 }
 
 .team-acco__pic-img {
@@ -91,9 +92,10 @@
 
 .team-acco__text {
 	float: left;
-	width: 80%;
+	width: 70%;
 	max-height: 250px;
 	overflow: auto;
+	padding-left: 10px;
 }
 
 .team-acco__text-title {

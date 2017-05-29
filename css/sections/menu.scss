@@ -24,16 +24,23 @@
 	height: 100%;
 	@extend %clearfix;
 
-	&--active {
+	&.active {
 
 		.menu-acco__trigger-text {
 			color: $yellow;
 		}
 
 		.menu-acco__content {
-			width: 550px;
+			// width: 550px;
+			// animation: width 1s forwards;
 		}
 	}
+	
+}
+
+@keyframes width {
+	from {width: 0;}
+	to {width: 550px;}
 }
 
 .menu-acco__trigger {
@@ -46,6 +53,18 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
+}
+
+.menu-acco__trigger--pic1 {
+	background-image: url('../img/bg/menu/meats.jpg');
+}
+
+.menu-acco__trigger--pic2 {
+	background-image: url('../img/bg/menu/vegans.jpg');
+}
+
+.menu-acco__trigger--pic3 {
+	background-image: url('../img/bg/menu/diets.jpg');
 }
 
 .menu-acco__trigger-text {

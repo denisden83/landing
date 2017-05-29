@@ -726,10 +726,19 @@ body {
 .wrapper {
   position: relative;
   overflow: hidden;
-  min-height: 100%;
-  min-width: 960px; }
+  min-width: 960px;
+  height: 100vh; }
+
+.maincontent {
+  height: 100%;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  position: relative;
+  transition: 1s;
+  min-height: 650px; }
 
 .section {
+  height: 100%;
   height: 100vh;
   min-height: 650px; }
 
@@ -838,6 +847,12 @@ footer {
 
 .fixed-menu__item {
   margin-bottom: 5px; }
+  .fixed-menu__item.active .fixed-menu__link::before {
+    width: 14px;
+    height: 14px;
+    opacity: 1; }
+  .fixed-menu__item.active .fixed-menu__link::after {
+    background: #0EFF00; }
 
 .fixed-menu__link {
   display: block;
@@ -864,12 +879,6 @@ footer {
     width: 6px;
     height: 6px;
     background: #09A600; }
-  .fixed-menu__link.fixed-menu__link--active::before {
-    width: 14px;
-    height: 14px;
-    opacity: 1; }
-  .fixed-menu__link.fixed-menu__link--active::after {
-    background: #0EFF00; }
   .fixed-menu__link:hover::before {
     width: 14px;
     height: 14px;
@@ -896,8 +905,8 @@ footer {
     width: auto;
     height: auto;
     background: black;
-    -webkit-animation: rgba 2s 1s forwards;
-    animation: rgba 2s 1s forwards; }
+    -webkit-animation: rgba 2s 2s forwards;
+    animation: rgba 2s 2s forwards; }
   @supports (object-fit: cover) {
     .hero video {
       top: 0;
@@ -1177,7 +1186,7 @@ footer {
   background: rgba(255, 255, 255, 0.9);
   border-radius: 7px;
   padding: 20px;
-  left: -999px;
+  left: -9999px;
   opacity: 0;
   transition: opacity .5s;
   z-index: 10; }
@@ -1242,7 +1251,8 @@ footer {
 
 .burger-slider__pic {
   display: inline-block;
-  max-width: 100%; }
+  max-width: 100%;
+  height: auto; }
 
 .burger-slider__right {
   float: left;
@@ -1298,11 +1308,9 @@ footer {
 
 .team-acco__item {
   margin-bottom: 40px; }
-  .team-acco__item--active .team-acco__content {
-    display: block; }
-  .team-acco__item--active .team-acco__trigger {
+  .team-acco__item.active .team-acco__trigger {
     color: #f9b43b; }
-    .team-acco__item--active .team-acco__trigger::before {
+    .team-acco__item.active .team-acco__trigger::before {
       -webkit-transform: rotate(-180deg);
       -ms-transform: rotate(-180deg);
       transform: rotate(-180deg); }
@@ -1338,7 +1346,8 @@ footer {
 .team-acco__pic {
   float: left;
   text-align: left;
-  width: 20%; }
+  width: 20%;
+  min-width: 100px; }
 
 .team-acco__pic-img {
   display: inline-block;
@@ -1353,9 +1362,10 @@ footer {
 
 .team-acco__text {
   float: left;
-  width: 80%;
+  width: 70%;
   max-height: 250px;
-  overflow: auto; }
+  overflow: auto;
+  padding-left: 10px; }
 
 .team-acco__text-title {
   font-family: 'Ubuntu-Bold';
@@ -1392,10 +1402,20 @@ footer {
 .menu-acco__item {
   float: left;
   height: 100%; }
-  .menu-acco__item--active .menu-acco__trigger-text {
+  .menu-acco__item.active .menu-acco__trigger-text {
     color: #f9b43b; }
-  .menu-acco__item--active .menu-acco__content {
-    width: 550px; }
+
+@-webkit-keyframes width {
+  from {
+    width: 0; }
+  to {
+    width: 550px; } }
+
+@keyframes width {
+  from {
+    width: 0; }
+  to {
+    width: 550px; } }
 
 .menu-acco__trigger {
   float: left;
@@ -1406,6 +1426,15 @@ footer {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center; }
+
+.menu-acco__trigger--pic1 {
+  background-image: url("../img/bg/menu/meats.jpg"); }
+
+.menu-acco__trigger--pic2 {
+  background-image: url("../img/bg/menu/vegans.jpg"); }
+
+.menu-acco__trigger--pic3 {
+  background-image: url("../img/bg/menu/diets.jpg"); }
 
 .menu-acco__trigger-text {
   color: #fff;
@@ -1724,5 +1753,36 @@ footer {
   display: block;
   width: 20px;
   height: 20px; }
+
+.full-review {
+  display: none;
+  padding: 25px 20px;
+  position: relative; }
+
+.full-review__close {
+  width: 15px;
+  height: 15px;
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  opacity: 0.7;
+  transition: .3s; }
+
+.full-review__title {
+  font-family: 'Gagalin-Regular';
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 25px; }
+
+.full-review__content {
+  font-family: 'Ubuntu-Light';
+  font-size: 14px; }
+
+.fancybox-overlay {
+  background: rgba(47, 50, 52, 0.92); }
+
+.fancybox-close {
+  display: none; }
 
 /*# sourceMappingURL=main.css.map */
