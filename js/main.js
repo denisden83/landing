@@ -221,3 +221,248 @@ $(document).ready(function() {
 
 	});
 });
+
+// form submit 
+$(function() {
+	$('#order-form').on('submit', function(e) {
+		e.preventDefault();
+
+		var form = $(this),
+		formData = form.serialize();
+
+
+		$.ajax({
+			url: '../mail.php',
+			type: 'POST',
+			data: formData,
+			success: function(data) {
+
+				var popup = data.status ? '#success' : '#error';
+
+				// if (data.status) {
+
+					$.fancybox.open([
+						{href: popup}
+					], {
+						type: 'inline',
+						maxWidth: 250,
+						fitToView: false,
+						padding: 0,
+						afterClose: function() {
+							form.trigger('reset');
+
+						}
+					});
+
+				// } else {
+
+				// 	$.fancybox.open([
+				// 		{href: '#error'}
+				// 	], {
+				// 		type: 'inline',
+				// 		maxWidth: 250,
+				// 		fitToView: false,
+				// 		padding: 0
+				// 	})
+
+				// }
+			}
+
+		});
+
+	});
+
+	$('.status-popup__close').on('click', function(e) {
+		e.preventDefault();
+
+		$.fancybox.close( );
+
+	});
+});
+
+// google map
+$(function() {
+
+
+var mapGoogle = (function() {
+  var init = function() {
+    var uluru = { lat: 50.451014, lng: 30.522610 };
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 17,
+      center: uluru,
+      scrollwheel: false,
+      styles: [
+        {
+          featureType: 'administrative.province',
+          elementType: 'all',
+          stylers: [
+            {
+              visibility: 'off'
+            }
+          ]
+        },
+        {
+          featureType: 'landscape',
+          elementType: 'all',
+          stylers: [
+            {
+              saturation: -100
+            },
+            {
+              lightness: '66'
+            },
+            {
+              visibility: 'on'
+            },
+            {
+              color: '#fffff7'
+            }
+          ]
+        },
+        {
+          featureType: 'poi.park',
+          elementType: 'geometry.fill',
+          stylers: [
+            {
+              color: '#fcf3da'
+            },
+            {
+              lightness: 40
+            },
+            {
+              saturation: -40
+            }
+          ]
+        },
+        {
+          featureType: 'road.highway',
+          elementType: 'geometry.fill',
+          stylers: [
+            {
+              color: '#ef8c25'
+            },
+            {
+              lightness: 40
+            }
+          ]
+        },
+        {
+          featureType: 'road.highway',
+          elementType: 'geometry.stroke',
+          stylers: [
+            {
+              visibility: 'on'
+            }
+          ]
+        },
+        {
+          featureType: 'road.local',
+          elementType: 'all',
+          stylers: [
+            {
+              saturation: -100
+            },
+            {
+              lightness: 40
+            },
+            {
+              visibility: 'on'
+            }
+          ]
+        },
+        {
+          featureType: 'transit',
+          elementType: 'all',
+          stylers: [
+            {
+              saturation: -100
+            },
+            {
+              visibility: 'simplified'
+            }
+          ]
+        },
+        {
+          featureType: 'water',
+          elementType: 'all',
+          stylers: [
+            {
+              visibility: 'on'
+            },
+            {
+              lightness: 30
+            },
+            {
+              weight: '1.32'
+            }
+          ]
+        }
+      ]
+    });
+    var icons = {
+      position: {
+        icon: {
+          url: '../img/icons/map-marker.svg',
+          size: new google.maps.Size(40, 50),
+          scaledSize: new google.maps.Size(40, 50)
+        }
+      },
+      logo: {
+        icon: {
+          url: '../img/icons/favicon.png',
+          size: new google.maps.Size(30, 30),
+          scaledSize: new google.maps.Size(30, 30)
+        }
+      }
+    };
+    var features = [
+      {
+        position: new google.maps.LatLng(50.450382, 30.523769),
+        type: 'position',
+        contentString: 'First', // Тултип
+        content: 'First market' // балун
+      },
+      {
+        position: new google.maps.LatLng(50.451213, 30.522581),
+        type: 'position',
+        contentString: 'Second',
+        content: 'Second market'
+      },
+      {
+        position: new google.maps.LatLng(50.450800, 30.521624),
+        type: 'position',
+        // type: 'logo',
+        contentString: 'Third',
+        content: 'Third market'
+      }
+    ];
+
+    var infowindow = new google.maps.InfoWindow();
+
+    features.forEach(function(feature) {
+      var marker = new google.maps.Marker({
+        position: feature.position,
+        icon: icons[feature.type].icon,
+        map: map,
+        animation: google.maps.Animation.DROP,
+        title: feature.contentString
+      });
+      marker.addListener('click', function() {
+        infowindow.setContent(feature.content);
+        infowindow.open(map, marker);
+        marker.setAnimation(google.maps.Animation.BOUNCE);
+        setTimeout(function() {
+          marker.setAnimation(null);
+        }, 1400);
+      });
+    });
+  };
+
+  return { init: init };
+})();
+
+if ($('#map').length) {
+  google.maps.event.addDomListener(window, 'load', mapGoogle.init);
+}
+
+});

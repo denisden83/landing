@@ -1779,6 +1779,22 @@ footer {
   font-family: 'Ubuntu-Light';
   font-size: 14px; }
 
+/* status popup */
+.status-popup {
+  width: 240px;
+  display: none; }
+
+.status-popup__inner {
+  padding: 20px;
+  text-align: center; }
+
+.status-popup__massage {
+  margin-bottom: 20px;
+  font-size: 14px; }
+
+.error-massage {
+  color: #e35028; }
+
 .fancybox-overlay {
   background: rgba(47, 50, 52, 0.92); }
 
